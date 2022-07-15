@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LoginRequest;
-use App\Http\Requests\RegistrationRequest;
-use App\Services\AuthService;
 use App\Services\UserService;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -21,6 +19,11 @@ class UserController extends Controller
     public function getUsers(): \Illuminate\Http\JsonResponse
     {
         return $this->userService->getUsers();
+    }
+
+    public function assignProjectToMember(Request $request): \Illuminate\Http\JsonResponse
+    {
+        return $this->userService->assignProjects($request);
     }
 
 }

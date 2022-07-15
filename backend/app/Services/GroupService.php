@@ -19,11 +19,11 @@ class GroupService
 
     public function getGroups(): \Illuminate\Http\JsonResponse
     {
-        $user = $this->model->all();
+        $data = $this->model->all();
         $payload = [
             'code' => 200,
             'app_message' => 'Successful',
-            'data' => GroupCollection::collection($user)
+            'data' => GroupCollection::collection($data)
         ];
         return response()->json($payload, 200);
     }

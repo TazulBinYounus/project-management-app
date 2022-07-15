@@ -2,61 +2,57 @@
 
 namespace App\Services;
 
-use App\Http\Resources\UserCollection;
-use App\Models\User;
+use App\Http\Resources\ProjectCollection;
+use App\Models\Project;
 
-class UserService
+
+class ProjectService
 {
 
     protected $model;
 
-    public function __construct(User $user)
+    public function __construct(Project $project)
     {
-        $this->model = $user;
+        $this->model = $project;
     }
 
-    public function getUsers(): \Illuminate\Http\JsonResponse
+    public function getProjects(): \Illuminate\Http\JsonResponse
     {
         $data = $this->model->all();
         $payload = [
             'code' => 200,
             'app_message' => 'Successful',
-            'data' => UserCollection::collection($data)
+            'data' => ProjectCollection::collection($data)
         ];
         return response()->json($payload, 200);
     }
 
-    public function assignProjects($request): \Illuminate\Http\JsonResponse
+    public function assignMembers($request): \Illuminate\Http\JsonResponse
     {
-
-        if (!$request->filled('user_id') || !$request->filled('project_ids')) {
+        if (!$request->filled('project_id') || !$request->filled('user_ids')) {
             $payload = [
-                'code' => 500,
+                'code' => 400,
                 'app_message' => 'Invalid! Please Enter Valid Input',
             ];
             return response()->json($payload, 200);
         }
 
-
-
-
-        $explodeProjectIds = explode(',', $request->project_ids);
-        $user = $this->model->find($request->user_id);
-        $result = $user->projects()->sync($explodeProjectIds);
+        $explodeUserIds = explode(',', $request->user_ids);
+        $project = $this->model->find($request->project_id);
+        $result = $project->users()->sync($explodeUserIds);
         if ($result){
             $payload = [
                 'code' => 200,
                 'app_message' => 'Successful',
-                'data' => new UserCollection($user)
+                'data' => new ProjectCollection($project)
             ];
-
             return response()->json($payload, 200);
         }
 
         $payload = [
             'code' => 400,
             'app_message' => 'Failed',
-            'data' => new UserCollection($user)
+            'data' => new ProjectCollection($project)
         ];
         return response()->json($payload, 200);
     }
