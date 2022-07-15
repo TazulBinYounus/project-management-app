@@ -1,0 +1,34 @@
+<template>
+    <div>
+        <div class="row">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">Dashboard</div>
+                    <div class="card-body">
+                        <div class="card">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><nuxt-link :to="{name: 'dashboard'}">Dashboard</nuxt-link></li>
+                                <li class="list-group-item"><nuxt-link :to="{name: 'dashboard-profile'}">Profile</nuxt-link></li>
+                                <li class="list-group-item"><a href="#" @click.prevent="logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                <nuxt-child />
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+     middleware: 'auth',
+     methods: {
+         async logout(){
+            await this.$auth.logout()
+         }
+     }
+}
+</script>

@@ -15,16 +15,17 @@ class UserService
         $this->model = $user;
     }
 
-    public function getUsers(): \Illuminate\Http\JsonResponse
+    public function getAuthUser(): \Illuminate\Http\JsonResponse
     {
-        $data = $this->model->all();
+        $data = auth()->user();
         $payload = [
             'code' => 200,
             'app_message' => 'Successful',
-            'data' => UserCollection::collection($data)
+            'data' => new UserCollection($data)
         ];
         return response()->json($payload, 200);
     }
+
 
     public function assignProjects($request): \Illuminate\Http\JsonResponse
     {

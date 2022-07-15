@@ -16,6 +16,11 @@ class UserController extends Controller
         $this->userService = $userService;
     }
 
+    public function getAuthUser(): \Illuminate\Http\JsonResponse
+    {
+        return $this->userService->getAuthUser();
+    }
+
     public function getUsers(): \Illuminate\Http\JsonResponse
     {
         return $this->userService->getUsers();

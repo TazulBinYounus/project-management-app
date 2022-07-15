@@ -18,8 +18,18 @@ class ProjectCollection extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'members' => UserCollection::collection($this->users),
+            'memberNames' => $this->getUserNames(),
         ];
+    }
+
+    public function getUserNames(): array
+    {
+        $users = UserCollection::collection($this->users);
+        $userNames = [];
+        foreach ($users as $user){
+            $userNames[] = ' ' . $user->name;
+        }
+        return $userNames;
     }
 
 }

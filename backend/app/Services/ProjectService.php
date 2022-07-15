@@ -37,9 +37,9 @@ class ProjectService
             return response()->json($payload, 200);
         }
 
-        $explodeUserIds = explode(',', $request->user_ids);
+//        $explodeUserIds = explode(',', $request->user_ids);
         $project = $this->model->find($request->project_id);
-        $result = $project->users()->sync($explodeUserIds);
+        $result = $project->users()->sync($request->user_ids);
         if ($result){
             $payload = [
                 'code' => 200,

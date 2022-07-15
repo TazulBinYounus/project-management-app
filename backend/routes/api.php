@@ -13,6 +13,7 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api'], function 
     Route::get('get-users', [UserController::class, 'getUsers']);
 
     Route::middleware(['auth:api'])->group(function () {
+        Route::get('user', [UserController::class, 'getAuthUser']);
         Route::post('assign-projects-to-member', [UserController::class, 'assignProjectToMember']);
         Route::get('get-groups', [GroupController::class, 'getGroups']);
         Route::get('get-projects', [ProjectController::class, 'getProjects']);
