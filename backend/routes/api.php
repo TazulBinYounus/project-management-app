@@ -7,7 +7,7 @@ use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api'], function () {
+Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api','middleware' => ['OriginAllowPolicy']], function () {
     Route::post('login', [AuthController::class, 'login']);
     Route::post('registration', [AuthController::class, 'registration']);
 
