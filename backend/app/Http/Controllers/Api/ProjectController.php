@@ -26,6 +26,9 @@ class ProjectController extends Controller
         return $this->projectService->assignMembers($request);
     }
 
-
+    public function filterProjects(Request $request): \Illuminate\Http\JsonResponse
+    {
+        return $this->projectService->filterProjects($request);
+    }
 
 }

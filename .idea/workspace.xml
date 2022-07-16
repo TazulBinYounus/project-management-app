@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10c3b942-212c-4f9d-8900-3ac1746368fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/pages/registration.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/ProjectController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Resources/ProjectCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Resources/ProjectCollection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Services/ProjectService.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/ProjectService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Services/UserService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +13,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/backend/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -170,7 +168,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ipdc-fe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bat-shm-backend" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -205,6 +203,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657883517449</updated>
       <workItem from="1657883518594" duration="23204000" />
+      <workItem from="1657945689662" duration="8658000" />
     </task>
     <servers />
   </component>
@@ -212,21 +211,45 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1657950928619">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1657950928619" />
     <state x="499" y="168" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1657903730497">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="168" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1657903730497" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1657911141996">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1657947518233">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1657911141996" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1657947518233" />
     <state x="604" y="337" key="NewPhpFileDialog" timestamp="1657894455675">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="337" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1657894455675" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1657908578883">
+    <state x="462" y="144" width="611" height="536" key="find.popup" timestamp="1657952816379">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1657908578883" />
+    <state x="462" y="144" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1657952816379" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1657947700052">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1657947700052" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1657952609817">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1657952609817" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/nuxt.config.js</url>
+          <line>5</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

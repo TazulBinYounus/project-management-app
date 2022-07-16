@@ -41,11 +41,13 @@ export default {
     },
     redirect: {
       login: '/login',
-      logout: '/',
+      logout: '/login',
       callback: '/login',
       home: '/projects'
     }
   },
+
+
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [

@@ -32,7 +32,7 @@
 </template>
 <script>
 export default {
-    auth: 'guest',
+  auth: 'guest',
     data() {
         return {
             loginForm: this.$vform({

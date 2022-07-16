@@ -17,6 +17,7 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api'], function 
         Route::post('assign-projects-to-member', [UserController::class, 'assignProjectToMember']);
         Route::get('get-groups', [GroupController::class, 'getGroups']);
         Route::get('get-projects', [ProjectController::class, 'getProjects']);
+        Route::post('filter-projects', [ProjectController::class, 'filterProjects']);
         Route::post('assign-members-to-project', [ProjectController::class, 'assignMembersToProject']);
         Route::post('logout', [AuthController::class, 'logout']);
     });

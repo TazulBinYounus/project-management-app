@@ -18,7 +18,9 @@ class ProjectCollection extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
+            'group' => $this->group,
             'memberNames' => $this->getUserNames(),
+            'created_at' => date('d-M-Y', strtotime($this->created_at)),
         ];
     }
 
