@@ -1,8 +1,3 @@
-# ![Laravel Example App](logo.png)
-
-
-----------
-
 # Getting started
 
 ## Installation Laravel Banckend
@@ -45,7 +40,9 @@ You can now access the server at http://localhost:8000
 ## Installation Frontend Nuxt 
 
 cd project-management-app/frontend
-npm install
-npm run dev
+
+     npm install
+
+     npm run dev
 
 
