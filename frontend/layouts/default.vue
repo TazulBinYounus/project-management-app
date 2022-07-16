@@ -15,11 +15,20 @@
             <li class="nav-item">
               <nuxt-link v-if="!loggedIn" class="nav-link" :to="{ name: 'registration' }">Register</nuxt-link>
             </li>
+
             <li class="nav-item">
-              <nuxt-link v-if="loggedIn" class="nav-link" :to="{ name: 'dashboard' }">
-                {{ user.data.name }}({{ user.data.email}})
-              </nuxt-link>
+              <nuxt-link v-if="loggedIn" class="nav-link" :to="{ name: 'projects' }">Projects</nuxt-link>
             </li>
+
+
+
+            <li class="nav-item">
+              <span v-if="loggedIn" class="nav-link" >
+                {{ user.data.name }}({{ user.data.email}})
+              </span>
+            </li>
+
+
 
             <li class="nav-item">
               <a v-if="loggedIn" class=" nav-link text-danger" href="#" @click.prevent="logout">Logout</a>

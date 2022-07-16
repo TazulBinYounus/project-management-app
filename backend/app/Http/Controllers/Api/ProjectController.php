@@ -31,4 +31,9 @@ class ProjectController extends Controller
         return $this->projectService->filterProjects($request);
     }
 
+    public function projectSubmit(Request $request): \Illuminate\Http\JsonResponse
+    {
+        return $this->projectService->projectSubmit($request);
+    }
+
 }

@@ -26,6 +26,21 @@ class UserService
         return response()->json($payload, 200);
     }
 
+    public function getUsers(): \Illuminate\Http\JsonResponse
+    {
+        $data = \Cache::get("data", null);
+        if(!$data){
+            $data = $this->model->latest()->get();
+            \Cache::put("data", $data, 30);
+        }
+        $payload = [
+            'code' => 200,
+            'app_message' => 'Successful',
+            'data' => UserCollection::collection($data)
+        ];
+        return response()->json($payload, 200);
+    }
+
 
     public function assignProjects($request): \Illuminate\Http\JsonResponse
     {

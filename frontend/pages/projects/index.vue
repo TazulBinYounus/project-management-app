@@ -1,6 +1,16 @@
 <template>
     <v-card>
-      <div class="container "><h4>Project List</h4></div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-10">
+            <h4>Project List</h4>
+          </div>
+          <div class="col-md-2">
+            <a  class="btn btn-secondary d-block" href="/projects/create" >Add Project</a>
+          </div>
+        </div>
+
+      </div>
       <form @submit.prevent="filterProject" @keydown="filterForm.onKeydown($event)">
         <div class="container">
           <div class="row">
@@ -28,7 +38,7 @@
             <div class="col-md-2 mt-2 ">
                 <label class="form-label"></label>
               <div class="form-group d-flex justify-content-between">
-                <button type="submit"  class="btn btn-primary">Search</button>
+                <button type="submit"  class="btn btn-secondary">Search</button>
               </div>
             </div>
           </div>

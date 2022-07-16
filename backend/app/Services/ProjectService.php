@@ -22,7 +22,7 @@ class ProjectService
 
     public function getProjects(): \Illuminate\Http\JsonResponse
     {
-        $data = $this->model->all();
+        $data = $this->model->latest()->get();
         $payload = [
             'code' => 200,
             'app_message' => 'Successful',
@@ -70,7 +70,6 @@ class ProjectService
         if($request->filled('to_date')){
             $query = $query->whereDate('created_at','<=',$request->to_date);
         }
-
         if($request->filled('name') ){
             $userIds = $this->user->where('name', 'LIKE', "%$request->name%" )->pluck('id');
             $query = $query->whereHas('users', function ($query) use ($userIds) {
@@ -78,11 +77,29 @@ class ProjectService
             });
         }
 
-        $data = $query->get();
+        $data = $query->latest()->get();
         $payload = [
             'code' => 200,
             'app_message' => 'Successful',
             'data' => ProjectCollection::collection($data)
+        ];
+        return response()->json($payload, 200);
+    }
+
+    public function projectSubmit($request): \Illuminate\Http\JsonResponse
+    {
+        $project = $this->model->create([
+            'group_id' => 1,
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+        $explodeUserIds = explode(',', $request->memberIds);
+        $project->users()->sync($explodeUserIds);
+        $payload = [
+            'code' => 200,
+            'app_message' => 'Successful',
+
         ];
         return response()->json($payload, 200);
     }
