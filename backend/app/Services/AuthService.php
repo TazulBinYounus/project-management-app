@@ -26,7 +26,6 @@ class AuthService
             $payload = [
                 'code' => 200,
                 'app_message' => 'login Successful, credentials matched.',
-                'user_message' => 'login Successful.',
                 'access_token' => $token,
                 'data' => new UserCollection($user)
             ];
@@ -35,9 +34,8 @@ class AuthService
         $payload = [
             'code' => 401,
             'app_message' => 'Login unsuccessful, unauthorised access attempt',
-            'user_message' => 'Login unsuccessful, unauthorised access attempt.',
         ];
-        return response()->json($payload, 401);
+        return response()->json($payload, 200);
     }
 
     public function registration($request): \Illuminate\Http\JsonResponse
@@ -49,7 +47,6 @@ class AuthService
             $payload = [
                 'code' => 200,
                 'app_message' => 'Registration Successful',
-                'user_message' => 'Registration Successful.',
                 'data' => new UserCollection($user),
             ];
             return response()->json($payload, 200);
@@ -57,7 +54,6 @@ class AuthService
         $payload = [
             'code' => 500,
             'app_message' => 'Registration unsuccessful',
-            'user_message' => 'Registration unsuccessful.',
         ];
         return response()->json($payload, 500);
     }
@@ -70,14 +66,12 @@ class AuthService
             $payload = [
                 'code' => 200,
                 'app_message' => 'You have been successfully logged out!',
-                'user_message' => 'You have been successfully logged out!'
             ];
             return response()->json($payload, 200);
         }
         $payload = [
             'code' => 401,
             'app_message' => 'not found',
-            'user_message' => 'Invalid user.'
         ];
         return response()->json($payload, 401);
     }

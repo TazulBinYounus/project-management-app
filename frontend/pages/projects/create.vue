@@ -53,7 +53,7 @@
 
           <div class="col-md-12">
             <div class="form-group d-flex justify-content-between">
-              <button type="submit" class="btn btn-secondary" @click="showAlert">Submit</button>
+              <button type="submit" class="btn btn-secondary" >Submit</button>
             </div>
           </div>
 
@@ -80,7 +80,6 @@
     data() {
       return {
         errors: [],
-        successMessage: false,
         errorMessage: false,
         form: {
           title: null,
@@ -91,13 +90,6 @@
           members: [],
           memberIds: [],
         },
-
-        show: true,
-        dismissSecs: 5,
-        dismissCountDown: 0,
-        showDismissibleAlert: false,
-        selected: null,
-        submitted: false,
       }
     },
 
@@ -181,13 +173,6 @@
           });
         }
 
-      },
-
-      countDownChanged(dismissCountDown) {
-        this.dismissCountDown = dismissCountDown
-      },
-      showAlert() {
-        this.dismissCountDown = this.dismissSecs
       },
     }
 

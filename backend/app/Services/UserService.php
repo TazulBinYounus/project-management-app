@@ -53,9 +53,6 @@ class UserService
             return response()->json($payload, 200);
         }
 
-
-
-
         $explodeProjectIds = explode(',', $request->project_ids);
         $user = $this->model->find($request->user_id);
         $result = $user->projects()->sync($explodeProjectIds);
