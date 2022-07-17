@@ -44,5 +44,7 @@ cd project-management-app/frontend
      npm install
 
      npm run dev
+     
+You can now access the frontend server at http://localhost:3000
 
 
